@@ -68,6 +68,52 @@ If you're interested in the DIY-route, here's a rough set of steps you can use:
       git commit -m 'my super-helpful commit comment here!'
       git push origin main
 
+
+Using ReStructured Text
+-----------------------
+
+Here are some common things you may want to do
+
+adding links
+~~~~~~~~~~~~
+
+.. code-block:: 
+
+  `link text <https://ils-underground.github.io/>`_
+
+`link text <https://ils-underground.github.io/>`_
+
+adding images
+~~~~~~~~~~~~~
+
+Place the image in the ``img/`` directory from the ``source`` directory (when you generate the site, they'll be copied over to the build/html directory)  and then add it like this:
+
+.. code-block:: 
+   
+   .. image:: img/2021-07-30-22-43-52.png
+   :alt: Alternative text
+
+.. image:: img/2021-07-30-22-43-52.png
+  :alt: Alternative text
+
+adding code examples
+~~~~~~~~~~~~~~~~~~~~
+
+use the directive ``.. code-block:: <name of language>`` and then indent the code block (with newlines before and after the block
+
+.. code-block:: python3
+
+   import re
+
+   # detect numbers, and decimal characters 
+   re_eval_num = re.compile(r"[0-9\.]{1,}")
+
+   salary = '$999,999.99'
+
+   eval(''.join([value for value in salary if re_eval_num.match(value)]))
+
+   # 999999.99
+
 Possible help pages
 -------------------
 

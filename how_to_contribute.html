@@ -93,6 +93,12 @@
 <li class="toctree-l1"><a class="reference internal" href="resources.html">External Resources</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">How To Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#modifying-adding-to-the-ils-undergound-docs-site">Modifying / Adding to the ils-undergound-docs Site</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-restructured-text">Using ReStructured Text</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-links">adding links</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-images">adding images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-code-examples">adding code examples</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#possible-help-pages">Possible help pages</a></li>
 </ul>
 </li>
@@ -232,6 +238,42 @@ git push origin main
 </div>
 </li>
 </ol>
+</div>
+<div class="section" id="using-restructured-text">
+<h2>Using ReStructured Text<a class="headerlink" href="#using-restructured-text" title="Permalink to this headline">¶</a></h2>
+<p>Here are some common things you may want to do</p>
+<div class="section" id="adding-links">
+<h3>adding links<a class="headerlink" href="#adding-links" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`link text &lt;https://ils-underground.github.io/&gt;`_
+</pre></div>
+</div>
+<p><a class="reference external" href="https://ils-underground.github.io/">link text</a></p>
+</div>
+<div class="section" id="adding-images">
+<h3>adding images<a class="headerlink" href="#adding-images" title="Permalink to this headline">¶</a></h3>
+<p>Place the image in the <code class="docutils literal notranslate"><span class="pre">img/</span></code> directory from the <code class="docutils literal notranslate"><span class="pre">source</span></code> directory (when you generate the site, they’ll be copied over to the build/html directory)  and then add it like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">image</span><span class="p">::</span> <span class="n">img</span><span class="o">/</span><span class="mi">2021</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">30</span><span class="o">-</span><span class="mi">22</span><span class="o">-</span><span class="mi">43</span><span class="o">-</span><span class="mf">52.</span><span class="n">png</span>
+<span class="p">:</span><span class="n">alt</span><span class="p">:</span> <span class="n">Alternative</span> <span class="n">text</span>
+</pre></div>
+</div>
+<img alt="Alternative text" src="_images/2021-07-30-22-43-52.png" />
+</div>
+<div class="section" id="adding-code-examples">
+<h3>adding code examples<a class="headerlink" href="#adding-code-examples" title="Permalink to this headline">¶</a></h3>
+<p>use the directive <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">code-block::</span> <span class="pre">&lt;name</span> <span class="pre">of</span> <span class="pre">language&gt;</span></code> and then indent the code block (with newlines before and after the block</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1"># detect numbers, and decimal characters</span>
+<span class="n">re_eval_num</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[0-9\.]{1,}&quot;</span><span class="p">)</span>
+
+<span class="n">salary</span> <span class="o">=</span> <span class="s1">&#39;$999,999.99&#39;</span>
+
+<span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">value</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">salary</span> <span class="k">if</span> <span class="n">re_eval_num</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">value</span><span class="p">)]))</span>
+
+<span class="c1"># 999999.99</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="possible-help-pages">
 <h2>Possible help pages<a class="headerlink" href="#possible-help-pages" title="Permalink to this headline">¶</a></h2>
