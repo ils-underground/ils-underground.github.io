@@ -45,6 +45,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="README ils-underground.github.io" href="README.html" />
     <link rel="prev" title="External Resources" href="resources.html" /> 
 </head>
 
@@ -106,6 +107,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#possible-help-pages">Possible help pages</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="README.html">README ils-underground.github.io</a></li>
 </ul>
 
             
@@ -170,6 +172,8 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
+        <a href="README.html" class="btn btn-neutral float-right" title="README ils-underground.github.io" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
       
         <a href="resources.html" class="btn btn-neutral float-left" title="External Resources" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
       
@@ -233,8 +237,11 @@ make html
 </pre></div>
 </div>
 </li>
-<li><p>Assuming you’re still in the root of the <code class="docutils literal notranslate"><span class="pre">ils-underground-docs</span></code> directory, move into the <code class="docutils literal notranslate"><span class="pre">build/html</span></code> directory, add the files to staging, and then commit</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> build/html
+<li><p>From the root of the <code class="docutils literal notranslate"><span class="pre">ils-underground-docs</span></code> directory (cloned from the first command in the Step 1. above), add files to staging, commit, and push changes made to the source docs. Next, move into the <code class="docutils literal notranslate"><span class="pre">build/html</span></code> directory, add the files to staging, and then commit</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add .
+git commit -m <span class="s1">&#39;changes to source, super-helpful commit comment here!&#39;</span>
+git push origin main
+<span class="nb">cd</span> build/html
 git add .
 git commit -m <span class="s1">&#39;my super-helpful commit comment here!&#39;</span>
 git push origin main
@@ -292,6 +299,7 @@ git push origin main
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="README.html" class="btn btn-neutral float-right" title="README ils-underground.github.io" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="resources.html" class="btn btn-neutral float-left" title="External Resources" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

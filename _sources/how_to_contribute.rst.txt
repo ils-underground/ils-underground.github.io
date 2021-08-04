@@ -59,10 +59,13 @@ If you're interested in the DIY-route, here's a rough set of steps you can use:
       # make sure you still have the (venv) prompt or have the virtual environnement active
       make html
 
-6) Assuming you're still in the root of the ``ils-underground-docs`` directory, move into the ``build/html`` directory, add the files to staging, and then commit
+6) From the root of the ``ils-underground-docs`` directory (cloned from the first command in the Step 1. above), add files to staging, commit, and push changes made to the source docs. Next, move into the ``build/html`` directory, add the files to staging, and then commit
 
    .. code-block:: bash
    
+      git add .
+      git commit -m 'changes to source, super-helpful commit comment here!'
+      git push origin main
       cd build/html
       git add .
       git commit -m 'my super-helpful commit comment here!'
