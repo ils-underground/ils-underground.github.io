@@ -1,8 +1,15 @@
-External Resources
-==================
+Resources
+=========
 
-Below are some links to useful external resources grouped by theme
+Below are some links to useful resources grouped by theme
 
+Python
+------
+
+.. toctree::
+  :maxdepth: 3
+
+  python_rest_api
 
 SQL
 ---
@@ -16,8 +23,6 @@ Helpful Presentations and Resources from Past IUG Conferences
 * HOWTO SQL: SIERRA - PART 2 `PDF <https://howtosql.cincy.pl/iug2021/static/iug2021_how_to_sql_part_2.pdf>`__
 * IUG 2019 How to SQL (Sierra) : https://iug2019-sql.github.io/
 
-Python
-------
 
 * TODO: add some resources pages (topics like, connecting to the Sierra PostgreSQL db, using Pandas / DataFrames, SQLAlchemy, etc)
 
