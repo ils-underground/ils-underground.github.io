@@ -281,7 +281,7 @@ sudo a2enmod proxy_http
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install certbot python3-certbot-apache
 </pre></div>
 </div>
-<p>Before running `certbot`, edit the files and add the DNS name you’ve picked for your site (in this example, it’s <code class="docutils literal notranslate"><span class="pre">collection-analysis.cincy.pl</span></code> ) to the `ServerName` directive in the <code class="docutils literal notranslate"><span class="pre">&amp;lt;VirtualHost&amp;gt;</span></code> block for your default Apache server configuration–located at <code class="docutils literal notranslate"><span class="pre">/etc/apache2/sites-available/default-ssl.conf</span></code></p>
+<p>Before running `certbot`, edit the files and add the DNS name you’ve picked for your site (in this example, it’s <code class="docutils literal notranslate"><span class="pre">collection-analysis.cincy.pl</span></code> ) to the `ServerName` directive in the <code class="docutils literal notranslate"><span class="pre">&lt;VirtualHost&gt;</span></code> block for your default Apache server configuration–located at <code class="docutils literal notranslate"><span class="pre">/etc/apache2/sites-available/default-ssl.conf</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo nano /etc/apache2/sites-available/default-ssl.conf
 </pre></div>
 </div>
@@ -297,10 +297,10 @@ sudo a2enmod proxy_http
 <p>If you followed the steps to this point, you should now have a file at this path (Certbot created this as the new default configuration for the server, and now has additional information regarding the certificate):
 <code class="docutils literal notranslate"><span class="pre">/etc/apache2/sites-enabled/000-default-le-ssl.conf</span></code>
 Edit this file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano /etc/apache2/sites-enabled/000-default-le-ssl.conf
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo nano /etc/apache2/sites-enabled/000-default-le-ssl.conf
 </pre></div>
 </div>
-<p>.. add the following to the file <code class="docutils literal notranslate"><span class="pre">000-default-le-ssl.conf</span></code> in the <code class="docutils literal notranslate"><span class="pre">&lt;VirtualHost</span> <span class="pre">*:443&gt;</span> <span class="pre">block</span></code> to meet your needs (we’ll later configure Datasette to use the <code class="docutils literal notranslate"><span class="pre">/home/</span></code> path, and <code class="docutils literal notranslate"><span class="pre">8010</span></code> port being referenced by the configuration here in virtual host configuration block:</p>
+<p>.. add the following to the file <code class="docutils literal notranslate"><span class="pre">000-default-le-ssl.conf</span></code> in the <code class="docutils literal notranslate"><span class="pre">&lt;VirtualHost</span> <span class="pre">*:443&gt;</span></code> block to meet your needs (we’ll later configure Datasette to use the <code class="docutils literal notranslate"><span class="pre">/home/</span></code> path, and <code class="docutils literal notranslate"><span class="pre">8010</span></code> port being referenced by the configuration here in virtual host configuration block:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>  ProxyPass /home/ http://127.0.0.1:8010/home/
   ProxyPreserveHost On
 </pre></div>
@@ -327,7 +327,7 @@ sudo ufw status verbose
 <div class="section" id="add-the-non-privileged-user-account">
 <h4><a class="toc-backref" href="#id8">Add the Non-Privileged User Account</a><a class="headerlink" href="#add-the-non-privileged-user-account" title="Permalink to this headline">¶</a></h4>
 <p>This account will actually run Datasette itself. It should own all of the Datasette software, configuration files, and SQLite database files.</p>
-<p>Add the user:</p>
+<p>Add the user (you can pick any valid username you wish here):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo adduser ray
 </pre></div>
 </div>
@@ -335,11 +335,12 @@ sudo ufw status verbose
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo usermod -aG sudo ray
 </pre></div>
 </div>
+<hr class="docutils" />
 <p>Now, we can restart our server, and ensure that everything comes back the way we intend.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo shutdown -r now
 </pre></div>
 </div>
-<p>Once the server restarts you can test to see if the test web page is loading, and that you can log back in and test that Apache has restarted as well.</p>
+<p>Once the server restarts you can perform various tests to see if you can login to the server, test web server is loading properly, the firewall is still running, etc.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="install-and-configure-datasette">
